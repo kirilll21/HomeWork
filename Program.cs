@@ -1,5 +1,5 @@
 ﻿Console.Clear();
-string[] myArrayStrings = { "Hello", "2", "world", ":-)", "ghgh", "hg" };
+string[] myArrayStrings = { "Hello", "2", "world", "231", "223", "ggez" };
 
 string[] Selection(string[] myArrayStrings)
 {
