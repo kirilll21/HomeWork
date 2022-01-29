@@ -1,8 +1,45 @@
-﻿int[] myArray = new int[10];
+﻿Console.Clear();
+string[] myArrayStrings = { "Hello", "2", "world", ":-)", "ghgh", "hg" };
 
-Random mass = new Random();
-for(int x = 0;x < myArray.Length; x++)
+string[] Selection(string[] myArrayStrings)
 {
-    myArray[x] = mass.Next(30);
-    
+    string[] ArrayFinite = new string[0];
+    int j = 0;
+    for (int i = 0; i < myArrayStrings.Length; i++)
+    {
+        if (myArrayStrings[i].Length <= 3)
+        {
+            int lenght = ArrayFinite.Length;
+            Array.Resize(ref ArrayFinite, lenght + 1);
+            ArrayFinite[j] = myArrayStrings[i];
+            j++;
+
+        }
+    }
+    return (ArrayFinite);
 }
+
+void WriteArray(string[] myArrayStrings, string[] ArrayFinite)
+
+{
+    Console.Write("[");
+    for (int i = 0; i < myArrayStrings.Length; i++)
+    {
+        Console.Write(myArrayStrings[i]);
+        if (i != myArrayStrings.Length - 1)
+        {
+            Console.Write(", ");
+        }
+    }
+    Console.Write("] -> [");
+    for (int i = 0; i < ArrayFinite.Length; i++)
+    {
+        Console.Write(ArrayFinite[i]);
+        if (i != ArrayFinite.Length - 1)
+        {
+            Console.Write(", ");
+        }
+    }
+    Console.WriteLine("]");
+}
+WriteArray(myArrayStrings, Selection(myArrayStrings));
